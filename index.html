@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feast &amp; Revel</title>
+  <meta name="description" content="Mock-up landing page for Feast &amp; Revel, contemporary Canadian dining in Ottawa's ByWard Market.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#4f7942">
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="banner">
+    <div class="wrap banner__in">
+      <a class="brand" href="#top">Feast &amp; Revel</a>
+      <nav class="nav" aria-label="Main">
+        <a href="#hours">Hours</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit">Visit</a>
+      </nav>
+      <a class="btn btn--dark" href="https://www.opentable.ca/r/feast-and-revel-ottawa" target="_blank" rel="noopener">Reserve a table<span class="sr-only"> (opens OpenTable in a new tab)</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap">
+        <p class="eyebrow">Contemporary Canadian &middot; ByWard Market, Ottawa</p>
+        <h1>Good food, good company.</h1>
+        <p class="lead">Contemporary Canadian cooking built on local, sustainable ingredients, served for breakfast and dinner in the heart of the ByWard Market.</p>
+        <div class="hero__cta">
+          <a class="btn btn--dark" href="https://www.opentable.ca/r/feast-and-revel-ottawa" target="_blank" rel="noopener">Reserve a table<span class="sr-only"> (opens OpenTable in a new tab)</span></a>
+          <a class="btn btn--line" href="#hours">See opening hours</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery wrap" aria-roledescription="carousel" aria-label="Photos of the restaurant">
+      <div class="gallery__track" role="group" aria-label="Photo slides" tabindex="0">
+        <figure class="slide" role="group" aria-roledescription="slide" aria-label="1 of 5">
+          <img src="images/slide-1.svg" width="1600" height="900" alt="Placeholder photo: the dining room">
+          <figcaption>The dining room</figcaption>
+        </figure>
+        <figure class="slide" role="group" aria-roledescription="slide" aria-label="2 of 5">
+          <img src="images/slide-2.svg" width="1600" height="900" alt="Placeholder photo: breakfast" loading="lazy">
+          <figcaption>Breakfast</figcaption>
+        </figure>
+        <figure class="slide" role="group" aria-roledescription="slide" aria-label="3 of 5">
+          <img src="images/slide-3.svg" width="1600" height="900" alt="Placeholder photo: a dinner plate" loading="lazy">
+          <figcaption>Dinner</figcaption>
+        </figure>
+        <figure class="slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
+          <img src="images/slide-4.svg" width="1600" height="900" alt="Placeholder photo: local ingredients" loading="lazy">
+          <figcaption>Local ingredients</figcaption>
+        </figure>
+        <figure class="slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
+          <img src="images/slide-5.svg" width="1600" height="900" alt="Placeholder photo: the ByWard Market" loading="lazy">
+          <figcaption>The ByWard Market</figcaption>
+        </figure>
+      </div>
+      <div class="gallery__bar">
+        <div class="gallery__ctrl">
+          <button class="pill" type="button" data-prev aria-label="Previous photo">&#8249;</button>
+          <button class="pill" type="button" data-next aria-label="Next photo">&#8250;</button>
+          <button class="pill" type="button" data-play aria-label="Pause slideshow">Pause</button>
+        </div>
+        <div class="dots"></div>
+      </div>
+    </section>
+
+    <section class="section" id="hours" aria-labelledby="hours-title">
+      <div class="wrap split">
+        <div>
+          <h2 id="hours-title">Opening hours</h2>
+          <p class="muted">Reservations are recommended, and required for large groups.</p>
+          <a class="btn btn--dark" href="https://www.opentable.ca/r/feast-and-revel-ottawa" target="_blank" rel="noopener">Reserve a table<span class="sr-only"> (opens OpenTable in a new tab)</span></a>
+        </div>
+        <table class="hours">
+          <caption class="sr-only">Opening hours</caption>
+          <thead>
+            <tr><th scope="col"><span class="sr-only">Day</span></th><th scope="col">Breakfast</th><th scope="col">Dinner</th></tr>
+          </thead>
+          <tbody>
+            <tr data-day="1"><th scope="row">Monday</th><td>7:00 &ndash; 11:00 am</td><td>Closed</td></tr>
+            <tr data-day="2"><th scope="row">Tuesday</th><td>7:00 &ndash; 11:00 am</td><td>5:30 &ndash; 9:00 pm</td></tr>
+            <tr data-day="3"><th scope="row">Wednesday</th><td>7:00 &ndash; 11:00 am</td><td>5:30 &ndash; 9:00 pm</td></tr>
+            <tr data-day="4"><th scope="row">Thursday</th><td>7:00 &ndash; 11:00 am</td><td>5:30 &ndash; 9:00 pm</td></tr>
+            <tr data-day="5"><th scope="row">Friday</th><td>7:00 &ndash; 11:00 am</td><td>5:30 &ndash; 10:00 pm</td></tr>
+            <tr data-day="6"><th scope="row">Saturday</th><td>7:00 am &ndash; noon</td><td>5:30 &ndash; 10:00 pm</td></tr>
+            <tr data-day="0"><th scope="row">Sunday</th><td>7:00 am &ndash; noon</td><td>Closed</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="reviews" aria-labelledby="reviews-title">
+      <div class="wrap">
+        <h2 id="reviews-title">What guests say</h2>
+        <div class="reviews">
+          <figure class="review">
+            <div class="stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote><p>Sample review. Replace this with a real review about the food.</p></blockquote>
+            <figcaption>Guest name <span class="tag">Sample</span></figcaption>
+          </figure>
+          <figure class="review">
+            <div class="stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote><p>Sample review. Replace this with a real review about the service.</p></blockquote>
+            <figcaption>Guest name <span class="tag">Sample</span></figcaption>
+          </figure>
+          <figure class="review">
+            <div class="stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote><p>Sample review. Replace this with a real review about the atmosphere.</p></blockquote>
+            <figcaption>Guest name <span class="tag">Sample</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <h2>Join us in the ByWard Market.</h2>
+        <p>Book ahead for dinner, or start your day with breakfast.</p>
+        <a class="btn btn--light" href="https://www.opentable.ca/r/feast-and-revel-ottawa" target="_blank" rel="noopener">Reserve a table<span class="sr-only"> (opens OpenTable in a new tab)</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="visit">
+    <div class="wrap footer__in">
+      <div>
+        <p class="footer__brand">Feast &amp; Revel</p>
+        <address>325 Dalhousie Street<br>Ottawa, ON K1N 7G1<br>Inside the Andaz Ottawa ByWard Market</address>
+      </div>
+      <div>
+        <p class="footer__head">Contact</p>
+        <p><a href="tel:+16133211234">(613) 321-1234</a></p>
+      </div>
+      <p class="footer__small">Design mock-up. Details come from public listings and still need to be confirmed.</p>
+    </div>
+  </footer>
+</body>
+</html>
