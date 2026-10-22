@@ -9,20 +9,21 @@ Treat this file as the template for every future change. If the owner changes th
 
 - Look: clean, professional, modern. Plenty of white space, one idea per section, no clutter.
 - Page background is white. Banner and call-to-action band are green. Accents are black (buttons, rules, stars, footer).
-- The green is Maximum Green, `#5e8c31`, the swatch of that name in the owner's `green_shades.svg`. It replaced the first
-  choice, fern green `#4f7942`. To change it, edit `--green` only.
+- The green is Dark Sea Green, `#8fbc8f`, the swatch of that name in the owner's `green_shades.svg`. It replaced Maximum Green
+  `#5e8c31`, which replaced the first choice, fern green `#4f7942`. To change it, edit `--green` in `styles.css`, the
+  `theme-color` meta in `index.html` and the two green-tinted placeholder slides (`images/slide-3.svg`, `slide-4.svg`).
 - Colours live as variables in `:root` in `styles.css`. Never hard-code a colour anywhere else
   (the placeholder SVGs in `images/` are the one exception).
 
   | Token | Value | Use |
   | --- | --- | --- |
-  | `--green` | `#5e8c31` | header banner, call-to-action band |
+  | `--green` | `#8fbc8f` | header banner, call-to-action band |
   | `--paper` | `#ffffff` | page background |
   | `--ink` | `#111111` | text, black buttons, rules, stars, footer |
   | `--muted` | `#555555` | secondary text |
   | `--line` | `#e4e4e4` | thin dividers and card borders |
 
-- Text on green is black (5.3:1 contrast). White on this green is only 4.0:1, so do not put small white text on it.
+- Text on green is black (8.8:1 contrast). White on this green is only 2.2:1, so never put white text on it.
   Buttons on green are black.
 - Text on photos is white over a dark gradient (`.hero__text`), so it stays readable on any photo.
 - Type: serif headings (`--serif`), system sans body (`--sans`). Pill buttons, 14px corners on cards.
