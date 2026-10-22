@@ -1,6 +1,6 @@
 :root {
   color-scheme: light;
-  --fern: #4f7942;
+  --green: #5e8c31; /* Maximum Green */
   --ink: #111111;
   --paper: #ffffff;
   --muted: #555555;
@@ -20,6 +20,11 @@ body {
   color: var(--ink);
   font: 1rem/1.6 var(--sans);
   -webkit-text-size-adjust: 100%;
+}
+/* paints the phone's top system bar green when the page is embedded */
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; z-index: 21;
+  height: env(safe-area-inset-top, 0px); background: var(--green);
 }
 img { display: block; max-width: 100%; }
 a { color: inherit; }
@@ -48,10 +53,10 @@ p { margin: 0 0 1rem; }
 }
 .btn--dark { background: var(--ink); color: #fff; }
 .btn--dark:hover { background: #2b2b2b; }
-.btn--line { border-color: var(--ink); color: var(--ink); background: transparent; }
-.btn--line:hover { background: var(--ink); color: #fff; }
 .btn--light { background: #fff; color: var(--ink); }
-.btn--light:hover { background: #eef4eb; }
+.btn--light:hover { background: #e9f1e2; }
+.btn--outline { border-color: #fff; color: #fff; background: transparent; }
+.btn--outline:hover { background: #fff; color: var(--ink); }
 .pill {
   min-width: 2.5rem; height: 2.5rem; padding: 0 .9rem;
   border: 1px solid var(--ink); border-radius: 999px; background: #fff; color: var(--ink);
@@ -59,46 +64,58 @@ p { margin: 0 0 1rem; }
 }
 .pill:hover { background: var(--ink); color: #fff; }
 
-/* fern banner */
+/* green banner: text on it is black, white only reaches 4.0:1 on this green */
 .banner {
-  position: sticky; top: 0; z-index: 20;
-  background: var(--fern); color: #fff;
-  --focus: #fff;
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: var(--green); color: var(--ink);
 }
 .banner__in { display: flex; align-items: center; gap: 1.5rem; min-height: 4.25rem; }
 .brand {
   font: 700 1.4rem/1 var(--serif); text-decoration: none; margin-right: auto;
 }
 .nav { display: none; gap: 1.75rem; }
-.nav a { text-decoration: none; font-weight: 500; }
+.nav a { text-decoration: none; font-weight: 600; }
 .nav a:hover { text-decoration: underline; text-underline-offset: 6px; }
 .banner .btn { padding: .6rem 1.1rem; font-size: .95rem; }
 
-/* hero */
-.hero { padding: 3.5rem 0 2rem; }
-.eyebrow {
-  margin: 0 0 1rem; color: var(--fern);
-  font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+/* hero: full-width slideshow with the text floating on top */
+.hero {
+  position: relative; height: clamp(30rem, 78vh, 46rem);
+  background: #1c1c1c; color: #fff; overflow: hidden;
 }
-.hero h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); max-width: 14ch; }
-.lead { max-width: 36rem; margin: 1.25rem 0 1.75rem; font-size: 1.15rem; color: var(--muted); }
-.hero__cta { display: flex; flex-wrap: wrap; gap: .75rem; }
-
-/* slideshow */
-.gallery { padding-bottom: 1rem; }
 .gallery__track {
-  display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
-  border-radius: var(--radius); scrollbar-width: none;
+  position: absolute; inset: 0;
+  display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
 }
 .gallery__track::-webkit-scrollbar { display: none; }
-.slide { position: relative; flex: 0 0 100%; margin: 0; scroll-snap-align: start; aspect-ratio: 4 / 3; }
-.slide img { width: 100%; height: 100%; object-fit: cover; }
+.slide { position: relative; flex: 0 0 100%; height: 100%; margin: 0; scroll-snap-align: start; }
+.slide img { width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
 .slide figcaption {
-  position: absolute; left: 1rem; bottom: 1rem;
+  position: absolute; top: 1rem; right: 1rem;
   padding: .4rem .9rem; border-radius: 999px;
   background: rgba(0, 0, 0, .72); color: #fff; font-size: .9rem; font-weight: 500;
 }
-.gallery__bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1rem; }
+/* the scrim keeps white text readable on any photo; clicks pass through to the slides */
+.hero__text {
+  position: absolute; inset: 0; z-index: 1; display: flex; align-items: flex-end;
+  padding-bottom: 5.5rem; pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, .62), rgba(0, 0, 0, .2) 45%, rgba(0, 0, 0, 0) 70%),
+    linear-gradient(to right, rgba(0, 0, 0, .45), rgba(0, 0, 0, .15) 60%, rgba(0, 0, 0, 0));
+}
+.hero__text .wrap { text-shadow: 0 2px 20px rgba(0, 0, 0, .35); }
+.eyebrow {
+  margin: 0 0 1rem;
+  font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+}
+.hero h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); max-width: 14ch; }
+.lead { display: none; max-width: 36rem; margin: 1.25rem 0 0; font-size: 1.15rem; }
+.hero__cta { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; pointer-events: auto; }
+.hero__cta .btn { text-shadow: none; }
+.gallery__bar {
+  position: absolute; left: 0; right: 0; bottom: 1.25rem; z-index: 2;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+}
 .gallery__ctrl { display: flex; gap: .5rem; }
 .dots { display: flex; }
 .dot {
@@ -107,9 +124,10 @@ p { margin: 0 0 1rem; }
 }
 .dot::before {
   content: ""; position: absolute; inset: .5rem; border-radius: 50%;
-  border: 1.5px solid var(--ink); transition: background-color .15s;
+  border: 1.5px solid #fff; transition: background-color .15s;
 }
-.dot[aria-current="true"]::before { background: var(--ink); }
+.dot[aria-current="true"]::before { background: #fff; }
+.dot:focus-visible, .hero .pill:focus-visible, .hero .btn:focus-visible { outline-color: #fff; }
 
 /* sections */
 .section { padding: 4rem 0; }
@@ -150,8 +168,8 @@ p { margin: 0 0 1rem; }
   font-size: .75rem; font-weight: 600;
 }
 
-/* fern call to action */
-.cta { padding: 4rem 0; background: var(--fern); color: #fff; text-align: center; --focus: #fff; }
+/* green call to action */
+.cta { padding: 4rem 0; background: var(--green); color: var(--ink); text-align: center; }
 .cta p { margin: 1rem 0 1.5rem; font-size: 1.1rem; }
 
 /* black footer */
@@ -166,8 +184,7 @@ p { margin: 0 0 1rem; }
 @media (min-width: 720px) {
   .nav { display: flex; }
   .banner .btn { padding: .75rem 1.4rem; font-size: 1rem; }
-  .hero { padding: 5rem 0 2.5rem; }
-  .slide { aspect-ratio: 21 / 9; }
+  .lead { display: block; }
   .section, .cta { padding: 5.5rem 0; }
   .split { grid-template-columns: .9fr 1.1fr; gap: 4rem; align-items: start; }
   .hours { font-size: 1.05rem; }

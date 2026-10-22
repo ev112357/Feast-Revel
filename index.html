@@ -6,7 +6,7 @@
   <title>Feast &amp; Revel</title>
   <meta name="description" content="Mock-up landing page for Feast &amp; Revel, contemporary Canadian dining in Ottawa's ByWard Market.">
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#4f7942">
+  <meta name="theme-color" content="#5e8c31">
   <link rel="stylesheet" href="styles.css">
   <script src="main.js" defer></script>
 </head>
@@ -26,22 +26,10 @@
   </header>
 
   <main id="main">
-    <section class="hero" id="top">
-      <div class="wrap">
-        <p class="eyebrow">Contemporary Canadian &middot; ByWard Market, Ottawa</p>
-        <h1>Good food, good company.</h1>
-        <p class="lead">Contemporary Canadian cooking built on local, sustainable ingredients, served for breakfast and dinner in the heart of the ByWard Market.</p>
-        <div class="hero__cta">
-          <a class="btn btn--dark" href="https://www.opentable.ca/r/feast-and-revel-ottawa" target="_blank" rel="noopener">Reserve a table<span class="sr-only"> (opens OpenTable in a new tab)</span></a>
-          <a class="btn btn--line" href="#hours">See opening hours</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="gallery wrap" aria-roledescription="carousel" aria-label="Photos of the restaurant">
-      <div class="gallery__track" role="group" aria-label="Photo slides" tabindex="0">
+    <section class="hero gallery" id="top">
+      <div class="gallery__track" role="group" aria-roledescription="carousel" aria-label="Photos of the restaurant" tabindex="0">
         <figure class="slide" role="group" aria-roledescription="slide" aria-label="1 of 5">
-          <img src="images/slide-1.svg" width="1600" height="900" alt="Placeholder photo: the dining room">
+          <img src="images/slide-1.jpg" width="1360" height="907" alt="Sunlit dining room with green upholstered chairs at a marble table, a copper-toned host stand, potted plants and tall windows" fetchpriority="high">
           <figcaption>The dining room</figcaption>
         </figure>
         <figure class="slide" role="group" aria-roledescription="slide" aria-label="2 of 5">
@@ -61,7 +49,20 @@
           <figcaption>The ByWard Market</figcaption>
         </figure>
       </div>
-      <div class="gallery__bar">
+
+      <div class="hero__text">
+        <div class="wrap">
+          <p class="eyebrow">Contemporary Canadian &middot; ByWard Market, Ottawa</p>
+          <h1>Good food, good company.</h1>
+          <p class="lead">Contemporary Canadian cooking built on local, sustainable ingredients, served for breakfast and dinner in the heart of the ByWard Market.</p>
+          <div class="hero__cta">
+            <a class="btn btn--light" href="https://www.opentable.ca/r/feast-and-revel-ottawa" target="_blank" rel="noopener">Reserve a table<span class="sr-only"> (opens OpenTable in a new tab)</span></a>
+            <a class="btn btn--outline" href="#hours">See opening hours</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__bar wrap">
         <div class="gallery__ctrl">
           <button class="pill" type="button" data-prev aria-label="Previous photo">&#8249;</button>
           <button class="pill" type="button" data-next aria-label="Next photo">&#8250;</button>
@@ -123,7 +124,7 @@
       <div class="wrap">
         <h2>Join us in the ByWard Market.</h2>
         <p>Book ahead for dinner, or start your day with breakfast.</p>
-        <a class="btn btn--light" href="https://www.opentable.ca/r/feast-and-revel-ottawa" target="_blank" rel="noopener">Reserve a table<span class="sr-only"> (opens OpenTable in a new tab)</span></a>
+        <a class="btn btn--dark" href="https://www.opentable.ca/r/feast-and-revel-ottawa" target="_blank" rel="noopener">Reserve a table<span class="sr-only"> (opens OpenTable in a new tab)</span></a>
       </div>
     </section>
   </main>
