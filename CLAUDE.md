@@ -35,10 +35,12 @@ Treat this file as the template for every future change. If the owner changes th
 1. Green banner (sticky): name, nav links, **Reserve a table** button
 2. Hero: a full-width photo slideshow directly under the banner, edge to edge. The headline, one line of copy and the
    Reserve button float on top of the photos. The slideshow controls sit on the photos too.
-3. Opening hours (breakfast and dinner columns)
-4. Reviews
-5. Green call-to-action band with a Reserve button
-6. Black footer: address, phone
+3. Menu: Breakfast and Dinner columns (sample content for now)
+4. Opening hours (breakfast and dinner columns)
+5. Reviews
+6. Green call-to-action band with a Reserve button
+7. Mailing list box: "Subscribe to our mailing list", an email field and a Subscribe button
+8. Black footer: address, phone
 
 ## Must keep
 
@@ -49,7 +51,10 @@ Treat this file as the template for every future change. If the owner changes th
   while touched, when off screen, and never starts on its own for visitors who prefer reduced motion. Swiping must still work with no JS.
   The first slide is the dining room photo.
 - Hours: one row per day (`data-day` 0 is Sunday). The script marks today's row.
+- Menu: two columns (Breakfast, Dinner) on desktop, stacked on phones, grouped by course. No prices until the owner supplies them.
 - Reviews: three cards in a row on desktop, stacked on phones.
+- Mailing list box: not connected to anything yet. The script only shows a note and keeps or sends no email. Before connecting
+  a provider (Mailchimp or similar), add a consent line; Canada's anti-spam law (CASL) requires consent for marketing email.
 - Works at 375px wide with no sideways scroll. Everything is reachable by keyboard. Keep visible focus outlines and alt text.
 
 ## Content rules
@@ -57,6 +62,9 @@ Treat this file as the template for every future change. If the owner changes th
 - Name, address (325 Dalhousie Street, Ottawa, ON K1N 7G1, inside the Andaz Ottawa ByWard Market), phone and the booking link
   come from public listings (OpenTable, Ottawa Tourism, AAA). The owner still needs to confirm them.
 - Hours are from the OpenTable listing: breakfast daily, dinner Tuesday to Saturday. Other listings disagree, so confirm with the restaurant.
+- Menu: only the Atlantic salmon crudo (burnt orange, toasted hazelnut) comes from a public listing. Every other dish is a
+  placeholder named "Dish name", and the section carries a "Sample" tag. Never invent dishes, descriptions or prices; use the
+  owner's real menu.
 - Never invent ratings, awards, press quotes, numbers or testimonials. Reviews must be real, from a guest, used with permission,
   and credited. Sample reviews carry a "Sample" tag until replaced.
 - Photos: `images/slide-1.jpg` is a photo the owner supplied. Slides 2 to 5 are generated placeholders (`images/slide-N.svg`).
@@ -72,7 +80,7 @@ Treat this file as the template for every future change. If the owner changes th
 | --- | --- |
 | `index.html` | all page content |
 | `styles.css` | colour tokens, layout, buttons, hero slideshow, hours table |
-| `main.js` | slideshow and today's row in the hours table |
+| `main.js` | slideshow, today's row in the hours table, mailing list box note |
 | `images/` | slideshow photos (one real photo, the rest placeholders) |
 
 ## Before finishing a change

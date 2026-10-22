@@ -83,4 +83,16 @@
     today.classList.add('is-today');
     today.setAttribute('aria-current', 'date');
   }
+
+  // mailing list box (mock-up: the email is not saved or sent anywhere)
+  const subscribe = $('.subscribe__form');
+  if (subscribe) {
+    subscribe.addEventListener('submit', (e) => {
+      e.preventDefault();
+      subscribe.reset();
+      const note = $('.subscribe__note');
+      note.textContent = 'Thanks! This is a mock-up, so your email was not saved.';
+      note.hidden = false;
+    });
+  }
 })();
