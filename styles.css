@@ -170,17 +170,30 @@ p { margin: 0 0 1rem; }
 
 .section h2 .tag { margin-left: .75rem; vertical-align: middle; font-family: var(--sans); }
 
-/* menu */
-.menu { display: grid; gap: 2.5rem; margin-top: 2rem; }
+/* menu: two panels that scroll on their own so a long menu stays short on the page */
+.menu { display: grid; gap: 1.5rem; margin-top: 2rem; }
+.menu__col {
+  max-height: min(28rem, 70vh); overflow-y: auto; padding: 0 1.5rem;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  scrollbar-width: thin; scrollbar-color: #bdbdbd transparent;
+}
 .menu h3 {
-  margin: 0 0 1.25rem; padding-bottom: .75rem;
-  border-bottom: 2px solid var(--ink); font: 700 1.6rem/1.2 var(--serif);
+  position: sticky; top: 0; z-index: 1;
+  margin: 0 0 1rem; padding: 1.25rem 0 .75rem;
+  background: var(--paper); border-bottom: 2px solid var(--ink); font: 700 1.6rem/1.2 var(--serif);
 }
 .menu h4 {
-  margin: 1.75rem 0 .25rem; color: var(--muted);
+  margin: 1.5rem 0 .25rem; color: var(--muted);
   font-size: .75rem; letter-spacing: .1em; text-transform: uppercase;
 }
 .menu h4:first-of-type { margin-top: 0; }
+/* fade on the bottom edge hints that there is more to scroll */
+.menu__col::after {
+  content: ""; display: block; position: sticky; bottom: 0;
+  height: 2.5rem; margin: -2.5rem -1.5rem 0; pointer-events: none;
+  background: linear-gradient(rgba(255, 255, 255, 0), var(--paper));
+}
+.menu .dishes:last-of-type { padding-bottom: 2.5rem; }
 .dishes { margin: 0; padding: 0; list-style: none; }
 .dishes li { padding: .9rem 0; border-bottom: 1px solid var(--line); }
 .dishes p { margin: 0; }
@@ -223,7 +236,7 @@ p { margin: 0 0 1rem; }
   .section, .cta { padding: 5.5rem 0; }
   .split { grid-template-columns: .9fr 1.1fr; gap: 4rem; align-items: start; }
   .hours { font-size: 1.05rem; }
-  .menu { grid-template-columns: 1fr 1fr; gap: 4rem; }
+  .menu { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .reviews { grid-template-columns: repeat(3, 1fr); }
   .subscribe__form { flex-direction: row; }
   .footer__in { grid-template-columns: 1fr 1fr 1fr; align-items: start; }

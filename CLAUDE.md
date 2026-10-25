@@ -35,7 +35,7 @@ Treat this file as the template for every future change. If the owner changes th
 1. Green banner (sticky): name, nav links, **Reserve a table** button
 2. Hero: a full-width photo slideshow directly under the banner, edge to edge. The headline, one line of copy and the
    Reserve button float on top of the photos. The slideshow controls sit on the photos too.
-3. Menu: Breakfast and Dinner columns (sample content for now)
+3. Menu: Breakfast and Dinner panels that scroll on their own (sample content for now)
 4. Opening hours (breakfast and dinner columns)
 5. Reviews
 6. Green call-to-action band with a Reserve button
@@ -51,7 +51,9 @@ Treat this file as the template for every future change. If the owner changes th
   while touched, when off screen, and never starts on its own for visitors who prefer reduced motion. Swiping must still work with no JS.
   The first slide is the dining room photo.
 - Hours: one row per day (`data-day` 0 is Sunday). The script marks today's row.
-- Menu: two columns (Breakfast, Dinner) on desktop, stacked on phones, grouped by course. No prices until the owner supplies them.
+- Menu: two panels (Breakfast, Dinner), side by side on desktop and stacked on phones. Each has a maximum height and scrolls on
+  its own, with the heading pinned and a fade on the bottom edge, so a long menu never takes over the page. Keep each panel
+  focusable (`tabindex="0"`) with an `aria-label`. Grouped by course. No prices until the owner supplies them.
 - Reviews: three cards in a row on desktop, stacked on phones.
 - Mailing list box: not connected to anything yet. The script only shows a note and keeps or sends no email. Before connecting
   a provider (Mailchimp or similar), add a consent line; Canada's anti-spam law (CASL) requires consent for marketing email.
@@ -79,7 +81,7 @@ Treat this file as the template for every future change. If the owner changes th
 | File | What it holds |
 | --- | --- |
 | `index.html` | all page content |
-| `styles.css` | colour tokens, layout, buttons, hero slideshow, hours table |
+| `styles.css` | colour tokens, layout, buttons, hero slideshow, menu panels, hours table |
 | `main.js` | slideshow, today's row in the hours table, mailing list box note |
 | `images/` | slideshow photos (one real photo, the rest placeholders) |
 
